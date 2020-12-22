@@ -45,18 +45,6 @@ public class ProduitController {
 
         produit.setCode(codeProd);
 
-        /*Produit produit1 = new Produit();
-        produit1.setCode(produit.getCode());
-        produit1.setLibelle(produit.getLibelle());
-        produit1.setPrixUnitaire(produit.getPrixUnitaire());
-        produit1.setQuantite(produit.getQuantite());
-        
-        int total = produit.getPrixUnitaire() * produit.getQuantite();
-
-        produit1.setPrixTotal(total);
-        produit1.setCategorie(produit.getCategorie());
-        produit1.setFournisseur(produit.getFournisseur());*/
-
         return produitRepository.save(produit);
     }
 

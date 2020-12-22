@@ -42,6 +42,8 @@ public class User {
     @Size(min = 6, max = 100)
     private String password;
 
+    private String profileUser;
+
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
@@ -56,6 +58,7 @@ public class User {
         this.username = username;
         this.email = email;
         this.password = password;
+
     }
 
     public Long getId() {
@@ -106,6 +109,14 @@ public class User {
         this.roles = roles;
     }
 
+    public String getProfileUser() {
+        return profileUser;
+    }
+
+    public void setProfileUser(String profileUser) {
+        this.profileUser = profileUser;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -114,6 +125,7 @@ public class User {
                 ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
+                ", profileUser='" + profileUser + '\'' +
                 ", roles=" + roles +
                 '}';
     }

@@ -22,9 +22,8 @@ public class BoutiqueAngularSpringApplication {
 
 		roleRepository.save(new Role(ERole.ROLE_ADMIN));
 		roleRepository.save(new Role(ERole.ROLE_USER));
-		roleRepository.save(new Role(ERole.ROLE_MODERATOR));
 		roleRepository.save(new Role(ERole.ROLE_CLIENT));
 
-	}*/
-
+	}
+*/
 }
