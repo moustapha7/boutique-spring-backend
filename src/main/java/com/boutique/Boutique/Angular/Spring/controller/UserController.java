@@ -1,10 +1,7 @@
 package com.boutique.Boutique.Angular.Spring.controller;
 
 
-
 import com.boutique.Boutique.Angular.Spring.exception.ResourceNotFoundException;
-import com.boutique.Boutique.Angular.Spring.model.ERole;
-import com.boutique.Boutique.Angular.Spring.model.Role;
 import com.boutique.Boutique.Angular.Spring.model.User;
 import com.boutique.Boutique.Angular.Spring.repository.RoleRepository;
 import com.boutique.Boutique.Angular.Spring.repository.UserRepository;
@@ -14,7 +11,6 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @CrossOrigin(origins = {"http://localhost:4200"})
@@ -51,23 +47,9 @@ public class UserController
                 .orElseThrow(() -> new ResourceNotFoundException("user non trouvé"));
         return  ResponseEntity.ok().body(user);
 
-
     }
 
-    @GetMapping("/listRoles")
-    public Optional<Role> geNameRole(ERole name)
-    {
-        return  roleRepository.findByName(name);
-    }
-
-   /* @GetMapping("/users/{id}")
-    public ResponseEntity<User>  getUserByUsernameAndRole(@PathVariable long id) throws ResourceNotFoundException
-    {
-        User user = userRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("user non trouvé"));
-        return  ResponseEntity.ok().body(user);
 
 
-    }*/
 
 }
